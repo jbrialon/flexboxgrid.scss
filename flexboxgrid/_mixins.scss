@@ -1,0 +1,32 @@
+/*==========  MIXINS  ==========*/
+
+@mixin media-query($media-query) {
+    @if $media-query == mobile-only {
+        @media only screen and (max-width: $screen-sm - 1) { @content; }
+    }
+
+    @if $media-query == mobile-tablet-only {
+        @media only screen and (max-width: $screen-md - 1) { @content; }
+    }
+
+    @if $media-query == sm {
+        @media only screen and (min-width:$screen-sm) { @content; }
+    }
+
+    @if $media-query == sm-only {
+        @media only screen and (min-width:$screen-sm) and (max-width: $screen-md - 1) { @content; }
+    }
+
+    @if $media-query == md {
+        @media only screen and (min-width:$screen-md) { @content; }
+    }
+
+    @if $media-query == md-only {
+        @media only screen and (min-width:$screen-md) and (max-width: $screen-lg - 1) { @content; }
+    }
+
+    @if $media-query == lg {
+        @media only screen and (min-width:$screen-lg) { @content; }
+    }
+
+}
